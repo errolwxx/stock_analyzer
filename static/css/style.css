@@ -171,7 +171,7 @@ section {
 }
 
 .bg-vector {
-    background: url('../images/services/service-bg.jpg') no-repeat fixed;
+    /* background: url('../images/services/service-bg.jpg') no-repeat fixed; */
     background-size: cover;
 }
 
@@ -382,6 +382,7 @@ header .navbar-brand b {
     background: #f1f3f6;
     background-size: cover;
     overflow:hidden;
+    background-image: none;
 }
 
     .home-bg .heading {
