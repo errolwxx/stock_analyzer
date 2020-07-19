@@ -1,0 +1,11 @@
+aiohttp
+aiofiles
+requests
+pandas
+bs4
+flask
+flask-wtf
+email_validator
+flask-sqlalchemy
+flask_login
+flask_bcrypt

@@ -1,0 +1,17 @@
+    {% extends 'layout.html' %}
+    {% block content %}
+    {% for i in datas %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <small class="text-muted">{{ i.date_posted.strftime('%Y-%m-%d') }}</small>
+        </div>
+        <p class="article-content">{{ i.tickername }}</p>
+      </div>
+    </article>
+    {% endfor %}
+
+              
+{% endblock content %}
+
+   

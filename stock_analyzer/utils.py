@@ -8,7 +8,7 @@ import async_timeout
 from io import StringIO
 import re
 
-data_path = './tickers.csv'
+data_path = 'stock_analyzer/tickers.csv'
 sem = asyncio.Semaphore(20)
 
 async def read_csv():
@@ -24,15 +24,10 @@ info_dict = df.to_dict(orient='records')
 tickers = [list(stock.values())[0] for stock in info_dict]
 prices = []
 
-# class StockAnalyzer:
-#     def __init__(self, stock_name):
-#         self.name = stock_name
-#         # self.url = stock_url
 
 def getPossibleResults(stock_name):
     possible_result_ticker = list(stock['Ticker'] for stock in info_dict if re.search(stock_name, str(stock['Name']), flags=re.IGNORECASE))  # noqa: E501
     possible_result_name = list(stock['Name'] for stock in info_dict if re.search(stock_name, str(stock['Name']), flags=re.IGNORECASE))  # noqa: E501
-    # possible_result = dict(zip(possible_result_ticker, possible_result_name))
     stocks = accessStockPage(possible_result_ticker)
     return possible_result_ticker, possible_result_name, stocks
 
@@ -71,9 +66,8 @@ def crawl(stock_name):
     asyncio.set_event_loop(loop)
     loop.run_until_complete(asyncio.wait(tasks))
     loop.close()
-    # return prices
+    return prices
 
 if __name__ == "__main__":
-    # loop = asyncio.get_event_loop()
-    # loop.run_in_executor(None, accessStockPage)
+  
     crawl('facebook')

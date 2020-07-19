@@ -1,0 +1,40 @@
+    {% extends 'layout.html' %}
+    {% block content %}
+    <!-- End Navbar -->
+    <!-- Start Home -->
+    <section class="home-bg section active" id="home">
+        <div id="particles-js">
+        </div>
+        <div class="section-area">
+            <div class="section-content">
+                <div class="hero-text-area">
+                    <div class="welcome-area">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="hero-text text-center">
+                                        <h1>Stockscream</h1>
+                                    </div>
+                                    <div id="menu-outer">
+                                        <div class="table" style="padding: 5%;" >
+                                            <ul class="possible-list" style="float: none; padding:5%; justify-self: center; text-align: center; height: 400px; overflow-y: auto;">
+                                                {% for ticker, name in data.items() %}
+                                                    <a id="ticker-desired" onclick=GetText() style="font-weight: bold; color: #FF9E2B;">{{ticker}}</a> </br>
+                                                    <a >{{name[0]}}</a> </br>
+                                                    <a style="font-weight: 500; padding: 5%;">Price: {{name[1]}}</a></br>
+                                                </br>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Home -->
+{% endblock content %}
+       

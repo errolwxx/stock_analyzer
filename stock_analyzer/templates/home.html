@@ -1,0 +1,39 @@
+        {% extends 'layout.html' %}
+        {% block content %}
+       <!-- Start Home -->
+        <section class="home-bg section active" id="home">
+            <div id="particles-js">
+            </div>
+            <div class="section-area">
+                <div class="section-content">
+                    <div class="hero-text-area">
+                        <div class="welcome-area">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12">
+                                        <div class="hero-text text-center">
+                                            <h1 style="color: black;">Stockscream</h1>
+                                        </div>
+                                        <div class="searchbox">
+                                        <input class="c-checkbox" type="checkbox" id="checkbox">
+                                        <div class="c-formContainer">
+                                          <form class="c-form" method="POST" action="http://localhost:5000/list">
+                                            <input class="c-form__input" placeholder="Symbols or name" name="stock">
+                                            <label class="c-form__buttonLabel" for="checkbox">
+                                                        <input class="c-form__button" type="submit" value="Search"/>
+                                                    </label>
+                                        
+                                            <label class="c-form__toggle" for="checkbox" data-title="Begin search"></label>
+                                          </form>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Home -->
+    {% endblock content %}
