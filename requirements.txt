@@ -1,0 +1,6 @@
+aiohttp
+aiofiles
+requests
+pandas
+bs4
+flask
