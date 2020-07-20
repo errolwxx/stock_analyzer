@@ -27,7 +27,7 @@ html {
 }
 body {
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+    overflow: scroll;
     font-weight: 300;
     background-color: #f1f3f6;
     animation: pageAnimation ease 2s;
@@ -109,7 +109,7 @@ section {
     width: calc(100%) !important;
     bottom: 0;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
     -webkit-transform: translate3d(100%,0,0);
     transform: translate3d(100%,0,0);
     z-index: 0;
@@ -381,7 +381,7 @@ header .navbar-brand b {
 .home-bg {
     background: #f1f3f6;
     background-size: cover;
-    overflow:hidden;
+    overflow:auto;
     background-image: none;
 }
 

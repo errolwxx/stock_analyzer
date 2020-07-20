@@ -14,7 +14,7 @@ def homepage():
     return render_template('home.html')
 
 
-@app.route('/watchlist', methods = ['GET', 'POST'])
+@app.route('/history', methods = ['GET', 'POST'])
 @login_required
 def watchlistPage():
 
@@ -34,7 +34,9 @@ def possibleLsit():
         utils.crawl(fuzzy)
         prices = utils.prices
         results = dict(zip(results_tickers, zip(results_names, prices)))
-        
+        history = History(tickername = fuzzy)
+        db.session.add(history)
+        db.session.commit()
 
         
         

@@ -1,15 +1,18 @@
     {% extends 'layout.html' %}
     {% block content %}
-    {% for i in datas %}
-    <article class="media content-section">
-      <div class="media-body">
-        <div class="article-metadata">
-          <small class="text-muted">{{ i.date_posted.strftime('%Y-%m-%d') }}</small>
-        </div>
-        <p class="article-content">{{ i.tickername }}</p>
+    
+  <div id="menu-outer">
+      <div class="table" style="padding: 5%;" >
+          <ul class="possible-list" style="float: none; padding:5%; justify-self: center; text-align: center; height: 400px; overflow-y: auto;">
+            {% for i in datas %}
+                  <a id="ticker-desired" onclick=GetText() style="font-weight: bold; color: #FF9E2B;">{{ i.date_posted.strftime('%Y-%m-%d %H:%M:%S') }}</a> </br>
+                  <a style="font-weight: 500; padding: 5%;">{{ i.tickername }}</a></br>
+              </br>
+              {% endfor %}
+          </ul>
       </div>
-    </article>
-    {% endfor %}
+  </div>
+</div>
 
               
 {% endblock content %}
